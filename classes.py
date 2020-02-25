@@ -32,9 +32,9 @@ class Person:
 class Visitor (Person):
 
 
-    def __init__(self,name, id ,email ,ssn , gender ,phone ,destination):
+    def __init__(self ,name='', id=1 ,email='' ,ssn='' , gender='' ,phone=1 ,destination=''):
         Person.__init__(self,name, id ,email ,ssn , gender ,phone)
-
+        self.destination = destination
 
 
     def Rate(self):
@@ -46,22 +46,23 @@ class Visitor (Person):
 class Owner(Person):
 
 
-    def __init__(self, name, id, email, ssn, gender, phone, realState , approvedFamily):
-
+    def __init__(self,  name='', id=1 ,email='' ,ssn='' , gender='' ,phone=1, realState='' , approvedFamily=[]):
+        self.approvedFamily= approvedFamily
         Person.__init__(self, name, id, email, ssn, gender, phone)
 
 #test
-object = Owner('mohamed', 12, 'ad@gmail.com', 1123, 'male', '011', 'mozlakan', 'elkalam' )
-print(object.email)
+object = Owner()
+print(object.approvedFamily)
 
 
 
 class Security_Man (Person):
 
 
-    def __init__(self,name, id ,email ,ssn , gender ,phone ,ActiveHours):
+    def __init__(self ,name='', id=1 ,email='' ,ssn='' , gender='' ,phone=1 ,ActiveHours=8):
 
         Person.__init__(self,name, id ,email ,ssn , gender ,phone)
+        self.ActiveHours = ActiveHours
 
 
     def Add_Visitor(self):
@@ -79,7 +80,7 @@ class Security_Man (Person):
 
 class Request_To_Enter:
 
-    def __init__(self,idOwner,approvalState):
+    def __init__(self,idOwner=1,approvalState=''):
 
         self.id = idOwner
         self.approval = approvalState
@@ -100,7 +101,7 @@ class Request_To_Enter:
 
 class Path:
 
-    def __init__(self,id,path_List):
+    def __init__(self,id=1,path_List=[{}]):
 
         self.id = id
         self.approval = path_List
@@ -122,7 +123,7 @@ class Path:
 
 class Vehicle:
 
-    def __init__(self, namber, id, color, model, qr):
+    def __init__(self, namber=1, id=1, color='', model='', qr=''):
 
         self.namber = namber
         self.id = id
@@ -167,7 +168,7 @@ class Processing:
 class camera:
 
 
-    def __init__(self , id , position):
+    def __init__(self , id=1 , position=''):
 
         self.id = id
         self.position = position
