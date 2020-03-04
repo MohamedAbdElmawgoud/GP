@@ -14,6 +14,7 @@ while True:
     img=cv2.imdecode(imgNp,-1)
 
     # put the image on screen
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     cv2.imshow('IPWebcam',img)
 
     #To give the processor some less stress
