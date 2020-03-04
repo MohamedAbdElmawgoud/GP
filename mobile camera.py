@@ -12,9 +12,10 @@ while True:
     imgResp=urllib.request.urlopen(url)
     imgNp=np.array(bytearray(imgResp.read()),dtype=np.uint8)
     img=cv2.imdecode(imgNp,-1)
-
-    # put the image on screen
+#convert to gray
     img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    # put the image on screen
+
     cv2.imshow('IPWebcam',img)
 
     #To give the processor some less stress
